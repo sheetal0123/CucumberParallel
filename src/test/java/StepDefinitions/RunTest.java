@@ -10,7 +10,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 		features="src/main/resources/FeatureFiles",
 		glue="StepDefinitions",
-		plugin={"pretty", "html:target/cucumberreports"},
+		plugin={"pretty", "json:target/cucumberreports.json"},
 		monochrome=true
 		//dryRun=true
 		)
