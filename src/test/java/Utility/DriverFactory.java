@@ -18,6 +18,9 @@ public class DriverFactory {
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+ File.separator + "src" + File.separator + "main"  + File.separator + "resources" + File.separator + "drivers" + File.separator + "chromedriver.exe");
 		ChromeOptions options=new ChromeOptions();
 		options.addArguments("no-sandbox");
+		options.addArguments("test-type");
+		options.addArguments("start-maximized");
+		options.addArguments("--disable-extensions");
 		driver=new ChromeDriver(options);
 	    driver.manage().window().maximize();
 	    driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
