@@ -29,7 +29,7 @@ public class Homepage {
 	    hp.verifyflipkartassuredispresent();
 	}
 	
-	@When("^user click on login$")
+	/*@When("^user click on login$")
 	public void user_click_on_login(){
 	    hp.clicklogin();
 	}
@@ -37,5 +37,5 @@ public class Homepage {
 	@Then("^login popup should be displayed$")
 	public void login_popup_should_be_displayed(){
 	    hp.verifylogin();
-}
+}*/
 }

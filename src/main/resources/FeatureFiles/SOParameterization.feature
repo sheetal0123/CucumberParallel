@@ -6,4 +6,8 @@ Then page should open with title "<expectedtitle>"
 Examples:
 |url|expectedtitle|
 |https://www.google.com|Google|
-|https://www.yahoo.com|Yahoo|
+#|https://www.yahoo.com|Yahoo|
+#Examples:
+#|url|expectedtitle|
+#|https://www.google.com|Google|
+#|https://www.yahoo.com|Yahoo|

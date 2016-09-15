@@ -1,9 +1,11 @@
 package StepDefinitions;
 
+
+import Utility.DriverFactory;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import Utility.DriverFactory;
+
 
 public class Hooks {
 	
@@ -12,14 +14,15 @@ public class Hooks {
 	@Before
 	public void openbrowser(){
 		df.createdriver();
+		System.out.println("Current running thread id is "+Thread.currentThread().getId());
 	}
 	
-	@After
+	/*@After
 	public void closedriver(){
 		df.teardown();
-	}
+	}*/
 	
-	@Before("@sanity")
+	/*@Before("@sanity")
 	public void printmessagebeforescenario(){
 		df.printmessage("This should be printted before sanity tahg only");
 	}
@@ -44,7 +47,7 @@ public class Hooks {
 		if(scenario.isFailed()){
 			
 		}
-	}
+	}*/
 
 
 

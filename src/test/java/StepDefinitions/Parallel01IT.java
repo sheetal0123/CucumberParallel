@@ -8,11 +8,11 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features="src/main/resources/FeatureFiles",
-		glue="StepDefinitions",
-		plugin={"pretty", "html:target/cucumber-parallel/1.json"},
-		monochrome=true,
-		tags = {"~@ignored"}
+		//features="src/main/resources/FeatureFiles",
+		//glue="StepDefinitions",
+		//plugin={"pretty", "html:target/cucumber-parallel/1.json"},
+		//monochrome=true,
+		//tags = {"~@ignored"}	
 		//dryRun=true
 		)
 
