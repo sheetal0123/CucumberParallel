@@ -17,7 +17,7 @@ public class DriverFactory {
 	
 	public void createdriver()
 	{
-		/*System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+ File.separator + "src" + File.separator + "main"  + File.separator + "resources" + File.separator + "drivers" + File.separator + "chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+ File.separator + "src" + File.separator + "main"  + File.separator + "resources" + File.separator + "drivers" + File.separator + "chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("test-type");
 		options.addArguments("start-maximized");
@@ -31,8 +31,8 @@ public class DriverFactory {
 		capabilities.setCapability("chrome.binary", System.getProperty("user.dir")+ File.separator + "src" + File.separator + "main"  + File.separator + "resources" + File.separator + "drivers" + File.separator + "chromedriver.exe");
 		capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 
-		driver=new ChromeDriver(options);*/
-		driver=new FirefoxDriver();
+		driver=new ChromeDriver(options);
+		//driver=new FirefoxDriver();
 	    driver.manage().window().maximize();
 	    driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	    driver.get("https://www.flipkart.com");
