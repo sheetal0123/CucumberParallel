@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -16,7 +17,7 @@ public class DriverFactory {
 	
 	public void createdriver()
 	{
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+ File.separator + "src" + File.separator + "main"  + File.separator + "resources" + File.separator + "drivers" + File.separator + "chromedriver.exe");
+		/*System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+ File.separator + "src" + File.separator + "main"  + File.separator + "resources" + File.separator + "drivers" + File.separator + "chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("test-type");
 		options.addArguments("start-maximized");
@@ -30,7 +31,8 @@ public class DriverFactory {
 		capabilities.setCapability("chrome.binary", System.getProperty("user.dir")+ File.separator + "src" + File.separator + "main"  + File.separator + "resources" + File.separator + "drivers" + File.separator + "chromedriver.exe");
 		capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 
-		driver=new ChromeDriver(options);
+		driver=new ChromeDriver(options);*/
+		driver=new FirefoxDriver();
 	    driver.manage().window().maximize();
 	    driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	    driver.get("https://www.flipkart.com");
