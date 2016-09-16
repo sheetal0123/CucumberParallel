@@ -21,13 +21,13 @@ public class DriverFactory {
 		options.addArguments("test-type");
 		options.addArguments("start-maximized");
 		options.addArguments("--disable-extensions");
-		options.addArguments("no-sandbox");
+		//options.addArguments("no-sandbox");
 
 		options.addArguments("ignore-certificate-errors");
 		options.addArguments("--allow-running-insecure-content");
 
 		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-		//capabilities.setCapability("chrome.binary", WINDOWS_CHROME_DRIVER);
+		capabilities.setCapability("chrome.binary", System.getProperty("user.dir")+ File.separator + "src" + File.separator + "main"  + File.separator + "resources" + File.separator + "drivers" + File.separator + "chromedriver.exe");
 		capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 
 		driver=new ChromeDriver(options);
