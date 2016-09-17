@@ -1,6 +1,10 @@
 package StepDefinitions;
 
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+
 import Utility.DriverFactory;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
@@ -15,6 +19,14 @@ public class Hooks {
 	public void openbrowser(){
 		df.createdriver();
 		System.out.println("Current running thread id is "+Thread.currentThread().getId());
+	}
+	
+	@After
+	public void takescreenshot(Scenario scenario){
+		if(scenario.isFailed()){
+		byte[] screenshot=df.takescreenshotonfailure();
+		scenario.embed(screenshot,"image/png");
+		}
 	}
 	
 	/*@After

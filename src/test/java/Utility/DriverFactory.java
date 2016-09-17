@@ -3,6 +3,8 @@ package Utility;
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -46,6 +48,11 @@ public class DriverFactory {
 	
 	public void printmessage(String message){
 		System.out.println(message);
+	}
+	
+	public byte[] takescreenshotonfailure(){
+		byte[] screenshot =((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+		return screenshot;
 	}
 	
 	
