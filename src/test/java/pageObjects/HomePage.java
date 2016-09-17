@@ -10,7 +10,7 @@ import Utility.DriverFactory;
 public class HomePage extends DriverFactory {
 	
 	
-	String expectedtitle="Online Shopping India | Buy Mobiles, Electronics, Appliances, Clothing and More Online at Flipkart.com";
+	String expectedtitle="Online Shopping India | Buy Mobiles, Electronics, Appliances, Clothing and More Online at Flipkart.com1";
 	By searchbox=By.xpath("//div[@class='O8ZS_U']");
 	By dealsoftheday=By.xpath("//div[@class='_1GRhLX _3JslKL _2tVPFM required-tracking']");
 	By flipkartassured=By.xpath("//div[@class='_1GRhLX _3JslKL required-tracking']");
