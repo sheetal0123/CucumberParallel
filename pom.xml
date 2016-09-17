@@ -75,7 +75,7 @@
 							<glue>StepDefinitions</glue>
 							<featuresDirectory>src/main/resources/FeatureFiles</featuresDirectory>
 							<cucumberOutputDir>target/cucumber-parallel</cucumberOutputDir>
-							<format>json</format>
+							<format>html</format>
 							<monochrome>true</monochrome>
 							<tags>"~@ignored"</tags>
 						</configuration>
