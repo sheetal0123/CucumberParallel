@@ -64,23 +64,23 @@
 				<groupId>com.github.temyers</groupId>
 				<artifactId>cucumber-jvm-parallel-plugin</artifactId>
 				<version>1.0.1</version>
-				<executions>
-					<execution>
-						<id>generateRunners</id>
-						<phase>validate</phase>
-						<goals>
-							<goal>generateRunners</goal>
-						</goals>
-						<configuration>
-							<glue>StepDefinitions</glue>
-							<featuresDirectory>src/main/resources/FeatureFiles</featuresDirectory>
-							<cucumberOutputDir>target/cucumber-parallel</cucumberOutputDir>
-							<format>json</format>
-							<monochrome>true</monochrome>
-							<tags>"~@ignored"</tags>
-						</configuration>
-					</execution>
-				</executions>
+						<executions>
+							<execution>
+									<id>generateRunners</id>
+									<phase>validate</phase>
+									<goals>
+										<goal>generateRunners</goal>
+									</goals>
+								<configuration>
+									<glue>StepDefinitions</glue>
+									<featuresDirectory>src/main/resources/FeatureFiles</featuresDirectory>
+									<cucumberOutputDir>target/cucumber-parallel</cucumberOutputDir>
+									<format>json</format>
+									<monochrome>true</monochrome>
+									<tags>"~@ignored"</tags>
+								</configuration>
+							</execution>
+						</executions>
 			</plugin>
 		</plugins>
 	</build>
