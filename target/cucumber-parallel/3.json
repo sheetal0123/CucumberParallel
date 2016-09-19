@@ -1,0 +1,68 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 19698645749,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openbrowser()"
+            }
+          }
+        ],
+        "line": 2,
+        "name": "Open yahoo homepage",
+        "description": "",
+        "id": "check-yahoo;open-yahoo-homepage",
+        "after": [
+          {
+            "result": {
+              "duration": 165929,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.takescreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 267148803,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "user open yahoo.com",
+            "match": {
+              "location": "Yahoo.user_open_yahoo_com()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 307911,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "yahoo.com should open",
+            "match": {
+              "location": "Yahoo.yahoo_com_should_open()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "check yahoo",
+    "description": "",
+    "id": "check-yahoo",
+    "keyword": "Feature",
+    "uri": "FeatureFiles/Yahoo.feature"
+  }
+]
