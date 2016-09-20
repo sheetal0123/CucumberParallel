@@ -1,6 +1,5 @@
 Parallel02IT.class
 pageObjects\SOParameterization.class
-StepDefinitions\ParallelTest.class
 Parallel01IT.class
 pageObjects\HomePage.class
 Utility\DriverFactory.class
