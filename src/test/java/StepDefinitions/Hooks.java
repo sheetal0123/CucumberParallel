@@ -1,66 +1,31 @@
 package StepDefinitions;
 
-
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-
 import Utility.DriverFactory;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 
-
 public class Hooks {
-	
-	DriverFactory df=new DriverFactory();
-	
+
+	DriverFactory df = new DriverFactory();
+
 	@Before
-	public void openbrowser(){
+	public void openbrowser() {
+		System.out.println(">>>>>>>>>>>>>>> @Hook > Before: "+ Thread.currentThread().getName()+"    id: "+Thread.currentThread().getId());
+		
 		df.createdriver();
-		System.out.println("Current running thread id is "+Thread.currentThread().getId());
+		System.out.println("Current running thread id is " + Thread.currentThread().getId());
 	}
-	
-	@After
-	public void takescreenshot(Scenario scenario){
-		if(scenario.isFailed()){
-		byte[] screenshot=df.takescreenshotonfailure();
-		scenario.embed(screenshot,"image/png");
-		}
-	}
-	
-	/*@After
-	public void closedriver(){
-		df.teardown();
-	}*/
-	
-	/*@Before("@sanity")
-	public void printmessagebeforescenario(){
-		df.printmessage("This should be printted before sanity tahg only");
-	}
-	
-	@After("@sanity")
-	public void printmessageafterscenario(){
-		df.printmessage("This should be printted after sanity tahg only");
-	}
-	
-	@Before("@regression")
-	public void printmessagebeforeregressionscenario(){
-		df.printmessage("This should be printted before regression tahg only");
-	}
-	
-	@After("@regression")
-	public void printmessageafterregressionscenario(){
-		df.printmessage("This should be printted after regression tahg only");
-	}
-	
-	@After
-	public void takescreenshot(Scenario scenario){
-		if(scenario.isFailed()){
-			
-		}
-	}*/
 
-
+	@After
+	public void takescreenshot(Scenario scenario) {
+		System.out.println(">>>>>>>>>>>>>>> @Hook > After: "+ Thread.currentThread().getName()+"    id: "+Thread.currentThread().getId());
+		
+		if (scenario.isFailed()) {
+			byte[] screenshot = df.takescreenshotonfailure();
+			scenario.embed(screenshot, "image/png");
+		}
+		
+	}
 
 }

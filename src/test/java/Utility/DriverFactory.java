@@ -15,10 +15,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class DriverFactory {
 
 	public static WebDriver driver;
-	public static WebDriverWait waitvar=null;
-	
-	public void createdriver()
-	{
+	public static WebDriverWait waitvar = null;
+
+	public void createdriver() {
+		
+		/* chrome setup
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+ File.separator + "src" + File.separator + "main"  + File.separator + "resources" + File.separator + "drivers" + File.separator + "chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("test-type");
@@ -34,26 +35,27 @@ public class DriverFactory {
 		capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 
 		driver=new ChromeDriver(options);
-		//driver=new FirefoxDriver();
-	    driver.manage().window().maximize();
-	    driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-	    driver.get("https://www.flipkart.com");
-	    waitvar=new WebDriverWait(driver, 50);
+		*/
+		
+		driver = new FirefoxDriver();
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		waitvar = new WebDriverWait(driver, 50);
+
+		System.out.println(">>>>>>>>>>>>>>> @Create Driver: " + Thread.currentThread().getName() + "    id: "
+				+ Thread.currentThread().getId());
 	}
-	
-	public void teardown()
-	{
+
+	public void teardown() {
 		driver.quit();
 	}
-	
-	public void printmessage(String message){
+
+	public void printmessage(String message) {
 		System.out.println(message);
 	}
-	
-	public byte[] takescreenshotonfailure(){
-		byte[] screenshot =((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+
+	public byte[] takescreenshotonfailure() {
+		byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 		return screenshot;
 	}
-	
-	
+
 }
