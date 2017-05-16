@@ -37,7 +37,9 @@ public class DriverFactory {
 		driver=new ChromeDriver(options);
 		*/
 		
+		System.setProperty("webdriver.gecko.driver", "/Users/sheetalsingh/Downloads/geckodriver");
 		driver = new FirefoxDriver();
+		
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		waitvar = new WebDriverWait(driver, 50);
 
