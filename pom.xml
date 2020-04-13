@@ -5,40 +5,46 @@
 	<artifactId>CucumberP</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
+	<properties>
+		<cucumber.version>1.2.5</cucumber.version>
+		<junit.version>4.12</junit.version>
+		<selenium.version>3.141.59</selenium.version>
+	</properties>
+
 
 	<dependencies>
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-java</artifactId>
-			<version>1.2.2</version>
+			<version>${cucumber.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-junit</artifactId>
-			<version>1.2.2</version>
+			<version>${cucumber.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-testng</artifactId>
-			<version>1.2.4</version>
+			<version>${cucumber.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-jvm</artifactId>
-			<version>1.1.5</version>
+			<version>${cucumber.version}</version>
 			<type>pom</type>
 		</dependency>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>3.4.0</version>
+			<version>${selenium.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.12</version>
+			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -76,7 +82,7 @@
 							<glue>StepDefinitions</glue>
 							<featuresDirectory>src/main/resources/FeatureFiles</featuresDirectory>
 							<cucumberOutputDir>target/cucumber-parallel</cucumberOutputDir>
-							<format>json</format>
+							<format>json,html</format>
 							<monochrome>true</monochrome>
 							<tags>"~@ignored"</tags>
 						</configuration>
@@ -86,6 +92,41 @@
 			
 			
 		</plugins>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											com.github.temyers
+										</groupId>
+										<artifactId>
+											cucumber-jvm-parallel-plugin
+										</artifactId>
+										<versionRange>
+											[1.0.1,)
+										</versionRange>
+										<goals>
+											<goal>generateRunners</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 	</build>
 	
 
